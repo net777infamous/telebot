@@ -66,7 +66,7 @@ reddit = praw.Reddit(
     password="drahciR0nline",
     user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
 )
-openai.api_key = "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"
+openai.api_key = "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"
 # Specify the subreddit you want to get posts from
 
 # Define the function that will handle the start command
@@ -108,15 +108,15 @@ startcheck = False
 updater.stop()
 
 # Wait for a few seconds to make sure the bot is stopped
-
-
-try:
-    bot.get_me()
-    # If the bot is running, start polling
-    updater.start_polling()
-except telegram.error.TelegramError:
-    # If the bot is not running, do nothing
-    pass
+def main():
+    try:
+        bot.get_me()
+        updater.stop()
+        # If the bot is running, start polling
+        updater.start_polling()
+    except telegram.error.TelegramError:
+        # If the bot is not running, do nothing
+        pass
 dispatcher = updater.dispatcher  
 #@bot.message_handler(commands=['start', 'hello'])
 @bot.message_handler(commands=['sendgif'])
@@ -250,7 +250,7 @@ def handle_message(update, context):
         bot.send_message(chat_id=update.effective_chat.id, text=response.choices[0].text, reply_markup=inline_keyboard)
 
     
-updater.dispatcher.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message))
+#updater.dispatcher.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message))
 
 
 def start_command(update, context):
@@ -954,6 +954,8 @@ def handle_successful_payment(update, context):
 dispatcher.add_handler(PreCheckoutQueryHandler(handle_pre_checkout_query))
 dispatcher.add_handler(MessageHandler(Filters.successful_payment, handle_successful_payment))
 
+if __name__ == '__main__':
+    main()
 
 '''
 
