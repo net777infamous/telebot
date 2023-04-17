@@ -113,7 +113,7 @@ def main():
         bot.get_me()
         updater.stop()
         # If the bot is running, start polling
-        updater.start_polling()
+       # updater.start_polling()
     except telegram.error.TelegramError:
         # If the bot is not running, do nothing
         pass
