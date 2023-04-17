@@ -13,7 +13,7 @@ import moviepy
 import random
 import time
 from moviepy.editor import *
-from telegram import Bot, InputFile
+#from telegram import Bot, InputFile
 from numpy import inf
 from moviepy.editor import VideoFileClip
 import subprocess
