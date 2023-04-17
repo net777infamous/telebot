@@ -110,7 +110,7 @@ updater.stop()
 # Wait for a few seconds to make sure the bot is stopped
 
 
-updater.start_polling()
+#updater.start_polling()
 dispatcher = updater.dispatcher  
 #@bot.message_handler(commands=['start', 'hello'])
 @bot.message_handler(commands=['sendgif'])
