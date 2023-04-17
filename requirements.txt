@@ -9,5 +9,5 @@ telegram==0.0.1
 python-telegram-bot==13.3
 stripe
 telebot
-mariadb
+mariadb==1.0.11
 openai
