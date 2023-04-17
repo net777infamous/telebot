@@ -47,7 +47,8 @@ stripe.api_key = "sk_live_51MwtUIBOyHqC9RCV5fPNWYdIaiI89cOFPaAT3XqfSfcpmEFSX9z6b
 
 
 #BOT_TOKEN = '5861175915:AAG0qb_-osHcHILKMhWuPunM2I8PrVNkfik'
-BOT_TOKEN = '5833460127:AAG2pu8DHDmDpOn9Z0PoRHV2iAkDAb3E2Ns'
+#BOT_TOKEN = '5833460127:AAG2pu8DHDmDpOn9Z0PoRHV2iAkDAb3E2Ns'
+BOT_TOKEN = '6239263434:AAFS8UDTeUXQGwt6Z3JYk2kaPf12IQbBsvQ'
 sentmess = 0
 sentmess2 = sentmess
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -66,7 +67,7 @@ reddit = praw.Reddit(
     password="drahciR0nline",
     user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
 )
-openai.api_key = "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"
+openai.api_key = "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"
 # Specify the subreddit you want to get posts from
 
 # Define the function that will handle the start command
@@ -136,6 +137,7 @@ thread2 = threading.Thread(target=print_numbers2)
 thread3 = threading.Thread(target=print_numbers3)
 
 def handle_message(update, context):
+    global paiduser
     # Get the user's message
    
     message_text = update.message.text
@@ -150,17 +152,18 @@ def handle_message(update, context):
             global subreddits_list
             print ("chat_id = "+ str(xchatid))
             if xchatid == 5362284509:
+                paiduser = True
                 subreddits_list = ['upskirt', 'pussy', 'HappyEmbarrassedGirls', 'TwerkQueens', 'AsianNSFW', 'BubbleButts', 'Ebony', 'FlashingAndFlaunting', 'PussyFlashing', 'SschoolGirlSkirts', 'DressedAndUndressed', 'PantiesToTheSide', 'paag', 'pawg', 'petite', 'Phatasswhitegirls', 'RedheadGifs', 'vagina', '18_19', 'FertileGirls', 'PLASTT', 'booty', 'boobs', 'sxygirlsinjeans', 'LegalTeens', 'bigasses', 'CamSluts', 'tiktokporn', 'collegesluts', 'hugeboobs']
             else:
                 subreddits_list = [ 'memes', 'blackpeopletwitter', 'funny', 'meirl', 'meme', 'pics','shitposting','mademesmile','unexpected', 'murderedbywords', 'tinder', 'tumblr', 'whitepeopletwitter','aww','animalsbeingbros','wellthatsucks','nextfuckinglevel','kidsarefuckingstupid', 'publicfreakout', 'politicalhumor', 'antiwork'] 
-            global paiduser
+        #    global paiduser
             global membername
             subreddit_name = random.choice(subreddits_list)
             # Get the subreddit instance
             subreddit = reddit.subreddit(subreddit_name)
         # total_members = bott.get_chat_member(xchatid, 5861175915) 
             
-            total_members = bott.get_chat_member(xchatid, 5833460127) 
+            total_members = bott.get_chat_member(xchatid, 6239263434) 
             print(f'Total members: {total_members}')
             first_name = total_members['user']['first_name']
             membername = first_name
@@ -251,6 +254,7 @@ def start_command(update, context):
     global startcheck
     global xchatid
     xchatid = update.message.chat_id
+    global paiduser
     '''
     if xchatid in active_users:
            #do nothing
@@ -265,17 +269,18 @@ def start_command(update, context):
     global subreddits_list
     print ("chat_id = "+ str(xchatid))
     if xchatid == 5362284509:
+        paiduser = True
         subreddits_list = ['upskirt', 'pussy', 'HappyEmbarrassedGirls', 'TwerkQueens', 'AsianNSFW', 'BubbleButts', 'Ebony', 'FlashingAndFlaunting', 'PussyFlashing', 'SschoolGirlSkirts', 'DressedAndUndressed', 'PantiesToTheSide', 'paag', 'pawg', 'petite', 'Phatasswhitegirls', 'RedheadGifs', 'vagina', '18_19', 'FertileGirls', 'PLASTT', 'booty', 'boobs', 'sxygirlsinjeans', 'LegalTeens', 'bigasses', 'CamSluts', 'tiktokporn', 'collegesluts', 'hugeboobs']
     else:
         subreddits_list = [ 'memes', 'blackpeopletwitter', 'funny', 'meirl', 'meme', 'pics','shitposting','mademesmile','unexpected', 'murderedbywords', 'tinder', 'tumblr', 'whitepeopletwitter','aww','animalsbeingbros','wellthatsucks','nextfuckinglevel','kidsarefuckingstupid', 'publicfreakout', 'politicalhumor', 'antiwork'] 
-    global paiduser
+    #global paiduser
     global membername
     subreddit_name = random.choice(subreddits_list)
     # Get the subreddit instance
     subreddit = reddit.subreddit(subreddit_name)
    # total_members = bott.get_chat_member(xchatid, 5861175915) 
     
-    total_members = bott.get_chat_member(xchatid, 5833460127) 
+    total_members = bott.get_chat_member(xchatid, 6239263434) 
     print(f'Total members: {total_members}')
     first_name = total_members['user']['first_name']
     membername = first_name
