@@ -66,7 +66,7 @@ reddit = praw.Reddit(
     password="drahciR0nline",
     user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
 )
-openai.api_key = "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"
+openai.api_key = "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"
 # Specify the subreddit you want to get posts from
 
 # Define the function that will handle the start command
@@ -110,7 +110,13 @@ updater.stop()
 # Wait for a few seconds to make sure the bot is stopped
 
 
-#updater.start_polling()
+try:
+    bot.get_me()
+    # If the bot is running, start polling
+    updater.start_polling()
+except telegram.error.TelegramError:
+    # If the bot is not running, do nothing
+    pass
 dispatcher = updater.dispatcher  
 #@bot.message_handler(commands=['start', 'hello'])
 @bot.message_handler(commands=['sendgif'])
