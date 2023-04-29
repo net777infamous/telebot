@@ -47,7 +47,7 @@ stripe.api_key = "sk_live_51MwtUIBOyHqC9RCV5fPNWYdIaiI89cOFPaAT3XqfSfcpmEFSX9z6b
 
 
 #BOT_TOKEN = '5861175915:AAG0qb_-osHcHILKMhWuPunM2I8PrVNkfik'
-BOT_TOKEN = '5833460127:AAG2pu8DHDmDpOn9Z0PoRHV2iAkDAb3E2Ns'
+BOT_TOKEN = ''
 sentmess = 0
 sentmess2 = sentmess
 bot = telebot.TeleBot(BOT_TOKEN)
