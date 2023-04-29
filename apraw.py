@@ -41,7 +41,7 @@ active_users = []
 
 
 # Set your API key
-stripe.api_key = "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"
+stripe.api_key = ""
 
 
 
@@ -66,7 +66,7 @@ reddit = praw.Reddit(
     password="drahciR0nline",
     user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
 )
-openai.api_key = "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"
+openai.api_key = ""
 # Specify the subreddit you want to get posts from
 
 # Define the function that will handle the start command
